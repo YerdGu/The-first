@@ -7,6 +7,7 @@ var item_gary = document.getElementById("item_gary");
 var item_green = document.getElementById("item_green");
 var item_red = document.getElementById("item_red");
 item_list.style.height = "0px";
+
 function list_slidedown() {
     item_list.showHeight = (function () {
         var temp_height = 0;
@@ -17,25 +18,29 @@ function list_slidedown() {
     })()
     item_list.style.height = item_list.showHeight+"px";
 }
-changeItem.addEventListener("mouseenter",function () {
+
+addEvent("mouseenter",changeItem,function () {
     list_slidedown();
 })
-changeItem.addEventListener("mouseleave",function () {
+addEvent("mouseleave",changeItem,function () {
     item_list.style.height = "0px";
 })
+
+
 document.body.className = "body-item1";
 item_list.className = "body-item1";
-item_gary.addEventListener("click",function () {
+
+addEvent("click",item_gary,function () {
     document.body.className = "body-item1";
     item_list.className = "body-item1";
     list_slidedown();
 })
-item_green.addEventListener("click",function () {
+addEvent("click",item_green,function () {
     document.body.className = "body-item2";
     item_list.className = "body-item2";
     list_slidedown();
 })
-item_red.addEventListener("click",function () {
+addEvent("click",item_red,function () {
     document.body.className = "body-item3";
     item_list.className = "body-item3";
     list_slidedown();
